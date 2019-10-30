@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+// C�
+
+
 typedef struct Guerreiro{
 	int ataque;
 	int defesa;
