@@ -4,6 +4,7 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <personagem.h>
 #include <personagem.cpp>
 
 using namespace std;

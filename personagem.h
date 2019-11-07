@@ -13,9 +13,6 @@ public:
     void CriaAleatorio();
     void CriaManual();
     void Ficha();
-
-protected:
-    
     int id;
     float forca;
     float constituicao;
