@@ -9,7 +9,7 @@
 using namespace std;
 
 
-Personagem::Personagem(int id) {
+Personagem Personagem::Personagem(int id) {
 	this->id = id;
 	this->forca = 0;
 	this->constituicao = 0;
