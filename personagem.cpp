@@ -1,36 +1,15 @@
-// trabalho_final.cpp : Este arquivo contém a função 'main'. A execução do programa começa e termina ali.
-//
-
 #include <iostream>
 #include <iomanip>
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "personagem.h"
 
 using namespace std;
 
-class Personagem {
-public:
-	int forca;
-	int constituicao;
-	int destreza;
-	int agilidade;
-	int carisma;
-	int vida;
-	int stamina;
-	int id;
-	Personagem(int id);
-	void CriaAleatorio();
-	void CriaManual();
-	void Ficha();
 
-private:
-
-
-};
-
-Personagem::Personagem(int id) {
+ Personagem::Personagem(int id) {
 	this->id = id;
 	this->forca = 0;
 	this->constituicao = 0;
@@ -413,23 +392,4 @@ void Personagem::Ficha() {
 	cout << "Carisma:       " << this->carisma << endl;
 	cout << "Vida:          " << this->vida << endl;
 	cout << "Stamina:       " << this->stamina << endl;
-}
-
-int main() {
-
-	char id='z';
-	do {
-		cout << endl << endl << endl << " Digite seu id:";
-		id = _getche();
-		switch (id){
-		case '0':
-			break;
-		case '1':
-			cout << endl << endl << endl << " SEU ID EH:" << id << endl;
-			Personagem j1 = Personagem(id);
-			break;
-		}
-	} while (id != '0');
-
-	return 0;
 }
