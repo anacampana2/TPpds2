@@ -3,7 +3,7 @@ typedef struct Guerreiro{
 	int defesa;
 	int carisma;
 	int pontos_vida;
-	int id_jogador
+	int id_jogador;
 }Guerreiro;
 int rolaDados();
 void criaGuerreiro(Guerreiro *gue, int id);
