@@ -4,12 +4,12 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <personagem.h>
+#include "personagem.h"
 
 using namespace std;
 
 
-Personagem Personagem::Personagem(int id) {
+ Personagem::Personagem(int id) {
 	this->id = id;
 	this->forca = 0;
 	this->constituicao = 0;
