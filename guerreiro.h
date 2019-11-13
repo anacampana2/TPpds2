@@ -9,7 +9,7 @@ class guerreiro:Personagem
 {
     public:
     void CriaGuerreiro();
-    void ataque();
+    void ataque(int i, personagem per);
     void andar();
     void pular();
     void defender();
