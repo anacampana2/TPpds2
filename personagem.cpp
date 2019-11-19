@@ -95,12 +95,12 @@ void Personagem::CriaManual() {
 	cout << "Vida:          " << endl;
 	cout << "Stamina:       " << endl;
 
-	char i = 254;	
+	char i = 254;
 	char nav = 'z';
 	int navaux = 0;
 	int pontos = 0;
 	do {
-		
+
 		if (navaux == 0) {
 			system("cls");
 			cout << " ___      __         __       __    __       __         __    __" << endl;
@@ -392,4 +392,14 @@ void Personagem::Ficha() {
 	cout << "Carisma:       " << this->carisma << endl;
 	cout << "Vida:          " << this->vida << endl;
 	cout << "Stamina:       " << this->stamina << endl;
+}
+
+void Personagem::Ataque(Personagem receb, int i){
+
+  if(i == 1){
+
+  }
+  else{
+
+  }
 }

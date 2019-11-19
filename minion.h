@@ -11,9 +11,10 @@ class minion:Personagem
     public:
     void CriaMinion();
     void ataque();
-    void andar();
-    void pular();
-    void defender();
+    void fala();
+//    void andar();
+//    void pular();
+//    void defender();
 };
 
 #endif

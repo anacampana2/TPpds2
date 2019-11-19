@@ -13,6 +13,7 @@ public:
     void CriaAleatorio();
     void CriaManual();
     void Ficha();
+    void Ataque(Personagem receb, int i);
     int id;
     float forca;
     float constituicao;
@@ -21,7 +22,7 @@ public:
     float carisma;
     float vida;
     float stamina;
-    
+
 };
 
 #endif
