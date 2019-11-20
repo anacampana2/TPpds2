@@ -11,9 +11,7 @@ class ReiDemonio:Personagem
     public:
     void CriaReiDemonio();
     void ataque();
-    void andar();
-    void pular();
-    void defender();
+    void fala();
 };
 
 #endif

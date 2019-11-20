@@ -57,3 +57,4 @@ PERSONAGEM JOGÁVEL:
 
 
 Ataque:
+dano=

@@ -348,18 +348,141 @@ if(decisao2==2){
 		}
 	}
 	}
-}
+
 if(decisao2==3){
 	cout<<"Voce não encontrou abrigo, o frio te abraçou e voce pereceu nos braços da morte"<<endl;
-	cout<<"GAME over"<<endl;
+	cout<<"GAME OVER"<<endl;
+}
+
+//HISTORIA ATE CHEGAR NO CHEFAO FINAL
+cout<<"Terceira Parte da jornada"<<endl;
+cout<<"Após derrotar o tinhoso, ainda confuso em sem esperança, o protagonista voce foi para a parte de trás do castelo"<<endl;
+
+ReiDemonio Rdem;
+Rdem.CriaReiDemonio();
+
+cout<<"Ao chegar ao seu destino, o terreno tortuoso e sombrio, já denunciava o que lhe esperava"<<endl;
+cout<<"O rei demonio, em meio a poeira e àos corvos, surgiu e voce tem que enfrenta-lo"<<endl;
+cout<<"Ao analisar as alternativas, e observar o terreno, voce tem que definir sua estrategia"<<endl;
+cout<<"1. Ficar de boa, e perguntar ao Rei demonio se está tudo certo"<<endl;
+cout<<"2. Se esconder e esperar o melhor momento oportuno para atacar"<<endl;
+cout<<"3.Xingar a mãe do demonio"<<endl;
+
+int decisao3=0;
+cin>>decisao3;
+
+if(decisao3==1){
+	cout<<"O Rei demonio teve um pessimo dia, e se irritou com sua pergunta.."<<endl;
+	cout<<"Por isso, ele te atacou e não te deu tempo de reaçao..."<<endl;
+	Rdem.fala();
+	Rdem.atacar(j1);
+
+	while(Rdem.vida > 0 && j1.vida > 0){
+		cout<<" Você precisa revidar!"<<endl;
+		cout<<"1. Ataque leve"<< endl;
+		cout<<"2. Ataque pesado"<<endl;
+		int ataq;
+		cin<< ataq;
+		if(ataq == 1){
+			if(j1.constituicao < 2){
+				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			}
+			else{
+					j1.ataque(Rdem, ataq);
+			}
+		}
+		else{
+			if(j1.constituicao <6){
+				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			}
+			else{
+					j1.ataque(Rdem, ataq);
+			}
+		}
+
+		cout <<  "O Rei demonio revidou"<<endl;
+		Rdem.fala();
+		Rdem.ataque(j1);
+	}
+	if(Rdem.vida<= 0){
+		cout<<"O Rei demonio foi derrotado!!!!Parabéns!!"<<endl;
+	}
+	else{
+		cout<<"Morreu na Praia! :("<<endl;
+	}
 }
 
 
-cout<<"Terceira Parte da jornada"<<endl;
 
 
 
+if(decisao3==2){
+	cout<<"O rei demonio já havia te visto, mas achou engraçado sua reação e te deu a oportunidade de começar atacando"<<endl;
+	cout<<"Defina seu tipo de ataque"<<endl;
+	cout<<"1. Ataque leve"<< endl;
+	cout<<"2. Ataque pesado"<<endl;
+	int ataq;
+	cin<< ataq;
+	if(ataq == 1){
+		if(j1.constituicao < 2){
+			cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+		}
+		else{
+				j1.ataque(Rdem, ataq);
+		}
+	}
+	else{
+		if(j1.constituicao <6){
+			cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+		}
+		else{
+				j1.ataque(Rdem, ataq);
+		}
+	}
+	cout<< "O Rei demonio revidou"<< endl;
+	Rdem.fala();
+	Rdem.ataque(j1);
+	while(Rdem.vida > 0 && j1.vida > 0){
+		cout<<" Você precisa revidar!"<<endl;
+		cout<<"1. Ataque leve"<< endl;
+		cout<<"2. Ataque pesado"<<endl;
+		int ataq;
+		cin<< ataq;
+		if(ataq == 1){
+			if(j1.constituicao < 2){
+				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			}
+			else{
+					j1.ataque(Rdem, ataq);
+			}
+		}
+		else{
+			if(j1.constituicao <6){
+				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			}
+			else{
+					j1.ataque(Rdem, ataq);
+			}
+		}
+		cout <<  "o Rei demonio revidou"<<endl;
+		Rdem.fala();
+		Rdem.ataque(j1);
+	}
+	if(Rdem.vida<= 0){
+				cout<<"O Rei demonio foi derrotado!!!!Parabéns!!"<<endl;
+	}
+	else{
+		cout<<"Morreu na praia:("<<endl;
+	}
+}
 
+if(decisao3==3){
+	cout<<"Com toda certeza nao é aconselhavel xingar a mae do demonio"<<endl;
+	cout<<"Ele ficou irado e te matou em um golpe :("<<endl;
+	cout<<"GAME OVER"<<endl;
+
+
+}
 
 
 
