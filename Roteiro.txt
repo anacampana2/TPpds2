@@ -54,3 +54,6 @@ PERSONAGEM JOGÁVEL:
 //            - debuff em força fisica
 //            - buff em magia
 //            - debuff em dano fisico tomado
+
+
+Ataque:

@@ -1,16 +1,16 @@
-#ifndef MINION_H
-#define MINION_H
+#ifndef LOBO_H
+#define LOBO_H
 
 #include <stdlib.h>
 #include <string>
 #include "personagem.h"
 
-class minion:Personagem
+class lobo:Personagem
 {
 
     public:
-    void CriaMinion();
-    void ataque();
+    void CriaLobo();
+    void Ataque(Personagem receb);
     void fala();
 //    void andar();
 //    void pular();
