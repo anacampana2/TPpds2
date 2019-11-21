@@ -392,7 +392,7 @@ void Personagem::Ficha() {
 	cout << "Agilidade:     " << this->agilidade << endl;
 	cout << "Carisma:       " << this->carisma << endl;
 	cout << "Vida:          " << this->vida << endl;
-	cout << "Stamina:       " << this->stamina << endl;
+//	cout << "Stamina:       " << this->stamina << endl;
 }
 
 void Personagem::Ataque(Personagem receb, int i){

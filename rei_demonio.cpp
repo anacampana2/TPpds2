@@ -3,7 +3,7 @@
 #include "REI_DEMONIO_H.h"
 #include "personagem.h"
 
-void ReiDemonio::CriaReiDemonio() {
+ ReiDemonio::ReiDemonio() {
   this->carisma=7;
   this->forca = 15;
   this->constituicao = 100;

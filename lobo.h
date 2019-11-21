@@ -5,11 +5,11 @@
 #include <string>
 #include "personagem.h"
 
-class lobo:Personagem
+class Personagem::Lobo
 {
 
     public:
-    void CriaLobo();
+    Lobo();
     void Ataque(Personagem receb);
     void fala();
 //    void andar();

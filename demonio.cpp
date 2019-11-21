@@ -3,7 +3,7 @@
 #include "personagem.h"
 #include "demonio.h"
 
-void demonio::CriaDemonio() {
+void Demonio::CriaDemonio() {
   this->carisma=5;
   this->forca = 20;
   this->constituicao = 100;
@@ -14,7 +14,7 @@ void demonio::CriaDemonio() {
 
 }
 
-void demonio::Ataque(Personagem receb){
+void Demonio::Ataque(Personagem receb){
   int ataque = this->forca + rolaDados() + this-> carisma;
   int defesa = receb.destreza + receb.agilidade + rolaDados();
    receb.vida = receb.vida - (ataque-defesa);
@@ -22,6 +22,6 @@ void demonio::Ataque(Personagem receb){
   cout<< "sua vida é igual a "<< receb.vida<< endl;
 }
 
-void demonio::fala(){
+void Demonio::fala(){
   cout<< "EU SOU O DEMONIO!! OUÇO O DISCO DA XUXA AO CONTRARIO NAS HORAS VAGAS!" << endl;
 }

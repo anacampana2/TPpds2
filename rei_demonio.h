@@ -9,8 +9,8 @@ class ReiDemonio:Personagem
 {
 
     public:
-    void CriaReiDemonio();
-    void ataque();
+    ReiDemonio();
+    void Ataque(Personagem receb);
     void fala();
 };
 

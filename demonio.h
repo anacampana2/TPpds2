@@ -5,13 +5,13 @@
 #include <string>
 #include "personagem.h"
 
-class boss:Personagem
+class Demonio:Personagem
 {
 
     public:
-    void CriaDemonio();
+    Demonio();
     void fala();
-    void Ataque();
+    void Ataque(Personagem receb);
 };
 
 #endif

@@ -3,18 +3,18 @@
 #include "personagem.h"
 #include "lobo.h"
 
-void lobo::CriaLobo() {
+ Lobo::Lobo() {
   this->carisma=0;
   this->forca = 10;
   this->constituicao = 100;
   this->destreza = 0;
   this->agilidade = 15
   this-> vida = 100;
-  this->stamina = 10 ;
+//  this->stamina = 10 ;
 
 }
 
-void lobo::Ataque(Personagem receb){
+void Lobo::Ataque(Personagem receb){
   int ataque = this->forca + rolaDados() + this-> carisma;
   int defesa = receb.destreza + receb.agilidade + rolaDados();
    receb.vida = receb.vida - (ataque-defesa);
@@ -22,6 +22,6 @@ void lobo::Ataque(Personagem receb){
   cout<< "sua vida é igual a "<< receb.vida<< endl;
 }
 
-void lobo::fala(){
+void Lobo::fala(){
   cout<< "Lobo: Grrrrrrrrrrrr AU!AU!AU!" << endl;
 }
