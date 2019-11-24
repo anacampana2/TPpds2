@@ -400,7 +400,7 @@ void Personagem::Ataque(Personagem receb, int i){
   if(i == 1){
 int ataque = this->forca + rolaDados() + this-> carisma;
 int defesa = receb.destreza + receb.agilidade + rolaDados();
-this->constituicao = this->constituicao - 2;
+this->stamina = this->stamina - 2;
  receb.vida = receb.vida - (ataque-defesa);
 cout<< "voce causou" << ataque-defesa<< " de dano" << endl;
 cout<< "a vida do adversario é igual a"<< receb.vida<< endl;
@@ -408,7 +408,7 @@ cout<< "a vida do adversario é igual a"<< receb.vida<< endl;
   else{
     int ataque = this->forca + rolaDados() + this-> carisma + 8;
     int defesa = receb.destreza + receb.agilidade + rolaDados();
-    this->constituicao = this->constituicao - 5;
+    this->stamina = this->stamina - 5;
     receb.vida = receb.vida - (ataque-defesa);
     cout<< "voce causou" << ataque-defesa<< " de dano" << endl;
     cout<< "a vida do adversario é igual a"<< receb.vida<< endl;

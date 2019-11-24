@@ -4,6 +4,7 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 #include "personagem.h"
 #include "lobo.h"
@@ -55,16 +56,16 @@ if(l==1){
 		int ataq;
 		cin>> ataq;
 		if(ataq == 1){
-			if(j1.constituicao < 2){
-				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			if(j1.stamina < 2){
+				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
 					j1.Ataque(a, ataq);
 			}
 		}
 		else{
-			if(j1.constituicao <6){
-				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			if(j1.stamina <6){
+				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
 					j1.Ataque(a, ataq);
@@ -89,16 +90,16 @@ cout<<"2. Ataque pesado"<<endl;
 int ataq;
 cin>> ataq;
 if(ataq == 1){
-	if(j1.constituicao < 2){
-		cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+	if(j1.stamina < 2){
+		cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 	}
 	else{
 			j1.Ataque(a, ataq);
 	}
 }
 else{
-	if(j1.constituicao <6){
-		cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+	if(j1.stamina <6){
+		cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 	}
 	else{
 			j1.Ataque(a, ataq);
@@ -114,16 +115,16 @@ while(a.vida > 0 && j1.vida > 0){
 	int ataq;
 	cin>> ataq;
 	if(ataq == 1){
-		if(j1.constituicao < 2){
-			cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+		if(j1.stamina < 2){
+			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
 				j1.Ataque(a, ataq);
 		}
 	}
 	else{
-		if(j1.constituicao <6){
-			cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+		if(j1.stamina <6){
+			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
 				j1.Ataque(a, ataq);
@@ -134,17 +135,17 @@ while(a.vida > 0 && j1.vida > 0){
 	a.Ataque(j1);
 }
 if(a.vida<= 0){
-	cout<<"O minion foi derrotado, continue sua jornada!"<<endl;
+	cout<<"O lobo foi derrotado, continue sua jornada!"<<endl;
 }
 else{
 	cout<<"Pensei que nao tinha como perder para o minion,Game over! :("<<endl;
 }
 }
 if(l==3){
-	cout<<"O minion sentiu sua presença e te atacou!!"<<endl;
+	cout<<"O lobo sentiu sua presença e te atacou!!"<<endl;
 	a.fala();
 	a.Ataque(j1);
-
+int k;
 	while(a.vida > 0 && j1.vida > 0){
 		cout<<" Você precisa revidar!"<<endl;
 		cout<<"1. Ataque leve"<< endl;
@@ -152,24 +153,28 @@ if(l==3){
 		int ataq;
 		cin>> ataq;
 		if(ataq == 1){
-			if(j1.constituicao < 2){
-				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			if(j1.stamina < 2){
+				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
 					j1.Ataque(a, ataq);
 			}
 		}
 		else{
-			if(j1.constituicao <6){
-				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			if(j1.stamina <6){
+				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
 					j1.Ataque(a, ataq);
 			}
 		}
-		cout <<  "o minion revidou"<<endl;
+		cout <<  "o lobo revidou"<<endl;
 		a.fala();
 		a.Ataque(j1);
+		k++;
+		if(k%2 == 0){
+			j1.stamina = j1.stamina +1;
+		}
 	}
 	if(a.vida<= 0){
 		cout<<"O lobo foi derrotado, continue sua jornada!"<<endl;
@@ -186,7 +191,7 @@ cout<<"1.Entrar no Castelo"<<endl;
 cout<<"2.Passar a noite fora e acender uma fogueira"<<endl;
 cout<<"3.Continuar a caminhada e procurar um lugar menos sombrio"<<endl;
 demonio dem;
-
+j1.vida = j1.vida + 10;
 int decisao2 = 0;
 cin >> decisao2;
 if(decisao2==1){
@@ -197,16 +202,16 @@ cout<<"2. Ataque pesado"<<endl;
 int ataq;
 cin>> ataq;
 if(ataq == 1){
-	if(j1.constituicao < 2){
-		cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+	if(j1.stamina < 2){
+		cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 	}
 	else{
 			j1.Ataque(dem, ataq);
 	}
 }
 else{
-	if(j1.constituicao <6){
-		cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+	if(j1.stamina <6){
+		cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 	}
 	else{
 			j1.Ataque(dem, ataq);
@@ -222,16 +227,16 @@ while(dem.vida > 0 && j1.vida > 0){
 	int ataq;
 	cin>> ataq;
 	if(ataq == 1){
-		if(j1.constituicao < 2){
-			cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+		if(j1.stamina < 2){
+			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
 				j1.Ataque(dem, ataq);
 		}
 	}
 	else{
-		if(j1.constituicao <6){
-			cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+		if(j1.stamina <6){
+			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
 				j1.Ataque(dem, ataq);
@@ -260,16 +265,16 @@ if(decisao2==2){
 		int ataq;
 		cin>> ataq;
 		if(ataq == 1){
-			if(j1.constituicao < 2){
-				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			if(j1.stamina < 2){
+				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
 					j1.Ataque(dem, ataq);
 			}
 		}
 		else{
-			if(j1.constituicao <6){
-				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			if(j1.stamina <6){
+				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
 					j1.Ataque(dem, ataq);
@@ -285,16 +290,16 @@ if(decisao2==2){
 			int ataq;
 			cin>> ataq;
 			if(ataq == 1){
-				if(j1.constituicao < 2){
-					cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+				if(j1.stamina < 2){
+					cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 				}
 				else{
 						j1.Ataque(dem, ataq);
 				}
 			}
 			else{
-				if(j1.constituicao <6){
-					cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+				if(j1.stamina <6){
+					cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 				}
 				else{
 						j1.Ataque(dem, ataq);
@@ -303,6 +308,10 @@ if(decisao2==2){
 			cout <<  "o demonio revidou"<<endl;
 			dem.fala();
 			dem.Ataque(j1);
+			k++;
+			if(k%2 == 0){
+				j1.stamina = j1.stamina +1;
+			}
 		}
 		if(dem.vida<= 0){
 			cout<<"O demonio foi derrotado, continue sua jornada!"<<endl;
@@ -323,16 +332,16 @@ if(decisao2==2){
 			int ataq;
 			cin>> ataq;
 			if(ataq == 1){
-				if(j1.constituicao < 2){
-					cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+				if(j1.stamina < 2){
+					cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 				}
 				else{
 						j1.Ataque(dem, ataq);
 				}
 			}
 			else{
-				if(j1.constituicao <6){
-					cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+				if(j1.stamina <6){
+					cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 				}
 				else{
 						j1.Ataque(dem, ataq);
@@ -363,6 +372,7 @@ cout<<"Após derrotar o tinhoso, ainda confuso em sem esperança, o protagonista
 
 ReiDemonio Rdem;
 
+j1.vida = j1.vida + 10;
 
 cout<<"Ao chegar ao seu destino, o terreno tortuoso e sombrio, já denunciava o que lhe esperava"<<endl;
 cout<<"O rei demonio, em meio a poeira e àos corvos, surgiu e voce tem que enfrenta-lo"<<endl;
@@ -387,16 +397,16 @@ if(decisao3==1){
 		int ataq;
 		cin>> ataq;
 		if(ataq == 1){
-			if(j1.constituicao < 2){
-				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			if(j1.stamina < 2){
+				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
 					j1.Ataque(Rdem, ataq);
 			}
 		}
 		else{
-			if(j1.constituicao <6){
-				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			if(j1.stamina <6){
+				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
 					j1.Ataque(Rdem, ataq);
@@ -406,6 +416,10 @@ if(decisao3==1){
 		cout <<  "O Rei demonio revidou"<<endl;
 		Rdem.fala();
 		Rdem.Ataque(j1);
+		k++;
+		if(k%2 == 0){
+			j1.stamina = j1.stamina +1;
+		}
 	}
 	if(Rdem.vida<= 0){
 		cout<<"O Rei demonio foi derrotado!!!!Parabéns!!"<<endl;
@@ -427,16 +441,16 @@ if(decisao3==2){
 	int ataq;
 	cin>> ataq;
 	if(ataq == 1){
-		if(j1.constituicao < 2){
-			cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+		if(j1.stamina < 2){
+			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
 				j1.Ataque(Rdem, ataq);
 		}
 	}
 	else{
-		if(j1.constituicao <6){
-			cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+		if(j1.stamina <6){
+			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
 				j1.Ataque(Rdem, ataq);
@@ -452,16 +466,16 @@ if(decisao3==2){
 		int ataq;
 		cin>> ataq;
 		if(ataq == 1){
-			if(j1.constituicao < 2){
-				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			if(j1.stamina < 2){
+				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
 					j1.Ataque(Rdem, ataq);
 			}
 		}
 		else{
-			if(j1.constituicao <6){
-				cout << "voce nao tem constituicao suficiente para atacar, voce perdeu a rodada"<< endl;
+			if(j1.stamina <6){
+				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
 					j1.Ataque(Rdem, ataq);
