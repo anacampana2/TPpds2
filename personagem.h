@@ -14,6 +14,7 @@ public:
     void CriaManual();
     void Ficha();
     void Ataque(Personagem receb, int i);
+    virtual void fala;
     int id;
     float forca;
     float constituicao;

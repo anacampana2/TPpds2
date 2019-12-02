@@ -5,7 +5,7 @@
 #include <string>
 #include "personagem.h"
 
-class Personagem::Lobo
+class Personagem:Lobo
 {
 
     public:

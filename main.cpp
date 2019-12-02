@@ -31,21 +31,23 @@ int main() {
 		}
 	} while (id != '0');
 //historia introdutoria aqui
-
-
+cout<<"Voce acorda com o grito de mulheres e criancas,pelo cheiro de enxofre presume que sua aldeia foi invadida por demonios "<<endl;
+cout<<"Sua primeira reacão é procurar sua filha, mas ela foi levada pelos demonios para completarem mais um ritual"<<endl;
+cout<<"Esse ritual acabaria com humanidade, pois ressucitaria Hitler "<<endl;
+cout<<"(Foi a pior pessoa que conseguirmos pensar :))"<<endl;
 
 
 //Primeira ação
 Lobo a;
 
-cout<<"Voce avistou um minion,o que voce vai fazer?"<<endl;
-cout<<"1. Fugir,afinal, minion é feios"<<endl;
+cout<<"Voce avistou um lobo,o que voce vai fazer?"<<endl;
+cout<<"1. Fugir,afinal, lobo é feios"<<endl;
 cout<<"2. Atacar"<<endl;
 cout<<"3.Observar de forma furtiva"<<endl;
 int l =0;
 cin>> l;
 if(l==1){
-	cout<<"O minion te perseguiu e te atacou pelas costas!!!"<<endl;
+	cout<<"O lobo te perseguiu e te atacou pelas costas!!!"<<endl;
 	a.fala();
 	a.Ataque(j1);
 
@@ -72,19 +74,20 @@ if(l==1){
 			}
 		}
 
-		cout <<  "o minion revidou"<<endl;
+		cout <<  "o lobo revidou"<<endl;
 		a.fala();
 		a.Ataque(j1);
 	}
 	if(a.vida<= 0){
-		cout<<"O minion foi derrotado, continue sua jornada!"<<endl;
+		cout<<"O lobo foi derrotado, continue sua jornada!"<<endl;
 	}
 	else{
-		cout<<"Pensei que nao tinha como perder para o minion,Game over! :("<<endl;
+		cout<<"Pensei que nao tinha como perder para o lobo,Game over! :("<<endl;
+			cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 	}
 }
 if(l==2){
-cout<<"Voce atacou o minion, defina seu tipo de Ataque"<<endl;
+cout<<"Voce atacou o lobo, defina seu tipo de Ataque"<<endl;
 cout<<"1. Ataque leve"<< endl;
 cout<<"2. Ataque pesado"<<endl;
 int ataq;
@@ -105,7 +108,7 @@ else{
 			j1.Ataque(a, ataq);
 	}
 }
-cout<< "O minion revidou"<< endl;
+cout<< "O lobo revidou"<< endl;
 a.fala();
 a.Ataque(j1);
 while(a.vida > 0 && j1.vida > 0){
@@ -130,7 +133,7 @@ while(a.vida > 0 && j1.vida > 0){
 				j1.Ataque(a, ataq);
 		}
 	}
-	cout <<  "o minion revidou"<<endl;
+	cout <<  "o lobo revidou"<<endl;
 	a.fala();
 	a.Ataque(j1);
 }
@@ -138,7 +141,8 @@ if(a.vida<= 0){
 	cout<<"O lobo foi derrotado, continue sua jornada!"<<endl;
 }
 else{
-	cout<<"Pensei que nao tinha como perder para o minion,Game over! :("<<endl;
+	cout<<"Pensei que nao tinha como perder para o lobo,Game over! :("<<endl;
+		cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 }
 }
 if(l==3){
@@ -180,7 +184,8 @@ int k;
 		cout<<"O lobo foi derrotado, continue sua jornada!"<<endl;
 	}
 	else{
-		cout<<"Pensei que nao tinha como perder para o minion,Game over! :("<<endl;
+		cout<<"Pensei que nao tinha como perder para o lobo,Game over! :("<<endl;
+			cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 	}
 }
 
@@ -251,6 +256,7 @@ if(dem.vida<= 0){
 }
 else{
 	cout<<"Demonios são fortes na escuridao... GAME OVER! :("<<endl;
+		cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 }
 }
 
@@ -318,6 +324,7 @@ if(decisao2==2){
 		}
 		else{
 			cout<<"Demonios são fortes na escuridao... GAME OVER! :("<<endl;
+				cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 		}
 	}
 	else{
@@ -357,6 +364,7 @@ if(decisao2==2){
 		}
 		else{
 			cout<<"Demonios são fortes na escuridao... GAME OVER! :("<<endl;
+				cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 		}
 	}
 	}
@@ -364,11 +372,13 @@ if(decisao2==2){
 if(decisao2==3){
 	cout<<"Voce não encontrou abrigo, o frio te abraçou e voce pereceu nos braços da morte"<<endl;
 	cout<<"GAME OVER"<<endl;
+		cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 }
 
 //HISTORIA ATE CHEGAR NO CHEFAO FINAL
 cout<<"Terceira Parte da jornada"<<endl;
-cout<<"Após derrotar o tinhoso, ainda confuso em sem esperança, o protagonista voce foi para a parte de trás do castelo"<<endl;
+cout<<"Após derrotar o tinhoso, ainda confuso em sem esperança, o protagonista (voce no caso) foi para a parte de trás do castelo"<<endl;
+cout<<"Lá, voce encontra o mapa que leva ate a localidade em que os cramunhoes realizam o ritual para invocar o supremacista branco"<<endl;
 
 ReiDemonio Rdem;
 
@@ -426,6 +436,7 @@ if(decisao3==1){
 	}
 	else{
 		cout<<"Morreu na Praia! :("<<endl;
+			cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 	}
 }
 
@@ -486,17 +497,20 @@ if(decisao3==2){
 		Rdem.Ataque(j1);
 	}
 	if(Rdem.vida<= 0){
-				cout<<"O Rei demonio foi derrotado!!!!Parabéns!!"<<endl;
+				cout<<"O Rei demonio foi derrotado!!!!Parabéns!! Voce salvou sua filha e o mundo :)"<<endl;
 	}
 	else{
 		cout<<"Morreu na praia:("<<endl;
+			cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 	}
 }
 
 if(decisao3==3){
 	cout<<"Com toda certeza nao é aconselhavel xingar a mae do demonio"<<endl;
 	cout<<"Ele ficou irado e te matou em um golpe :("<<endl;
-	cout<<"GAME OVER"<<endl;
+	cout<<"GAME OVER, o demonio torturou sua filha e te fez assistir enquanto ela agonizava e morria,"<<endl;
+	cout<<"Ela pegou em sua mao e disse: -Caraca papai voce é muito limitado"<<endl;
+	cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 
 
 }

@@ -3,7 +3,7 @@
 #include "personagem.h"
 #include "lobo.h"
 
- Lobo::Lobo() {
+ Lobo ::Lobo() {
   this->carisma=0;
   this->forca = 10;
   this->constituicao = 100;
@@ -24,4 +24,5 @@ void Lobo::Ataque(Personagem receb){
 
 void Lobo::fala(){
   cout<< "Lobo: Grrrrrrrrrrrr AU!AU!AU!" << endl;
+}
 }
