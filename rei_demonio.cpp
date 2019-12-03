@@ -1,21 +1,41 @@
+#include <iostream>
 #include <stdlib.h>
 #include <string>
-#include "REI_DEMONIO_H.h"
+#include "rei_demonio.h"
 #include "personagem.h"
+#include "roladados.cpp"
 
- ReiDemonio::ReiDemonio() {
-  this->carisma=7;
-  this->forca = 15;
-  this->constituicao = 100;
-  this->destreza = 5;
-  this->agilidade = 20;
-  this-> vida = 100;
-  this->stamina = 10 ;
 
+using namespace std;
+
+ ReiDemonio::ReiDemonio() 
+ {
+  
+  setCarisma(7);
+  float carisma = getCarisma();
+
+  setForca(15);  
+  float forca = getForca();
+
+  setConstituicao(100);
+  float constituicao = getConstituicao();
+  
+  setDestreza(5);
+  float destreza = getDestreza();
+
+  setAgilidade(20);
+  float agilidade = getAgilidade();
+
+  setVida(100);
+  float vida = getVida();
+
+  setStamina(10);
+  float stamina = getStamina();
+  
 }
 
-void ReiDemonio::Ataque(Personagem receb){
-  int ataque = this->forca + rolaDados() + this-> carisma;
+ void ReiDemonio::Ataque(Personagem receb, ReiDemonio reiDemonio){
+  int ataque = reiDemonio.getForca() + rolaDados() + reiDemonio.getCarisma();
   int defesa = receb.destreza + receb.agilidade + rolaDados();
    receb.vida = receb.vida - (ataque-defesa);
   cout<< "voce recebeu" << ataque-defesa<< " de dano" << endl;

@@ -9,6 +9,78 @@
 
 using namespace std;
 
+	void Personagem::setId(int id)
+	{
+		this->id = id;
+	}
+	void Personagem::setForca(float forca)
+	{
+		this->forca = forca;
+	}
+	void Personagem::setConstituicao(float constituicao)
+	{
+		this->constituicao = constituicao;
+	}
+	void Personagem::setDestreza(float destreza)
+	{
+		this->destreza = destreza;
+	}
+	void Personagem::setAgilidade(float agilidade)
+	{
+		this->agilidade = agilidade;
+	}
+	void Personagem::setCarisma(float carisma)
+	{
+		this->carisma = carisma;
+	}
+	void Personagem::setStamina(float stamina)
+	{
+		this->stamina = stamina;
+	}
+	
+	int Personagem::getId()
+	{
+		return id;
+	}
+	
+	float Personagem::getForca()
+	{
+		return forca;
+	}
+
+	float Personagem::getConstituicao()
+	{
+		return constituicao;
+	}
+
+	float Personagem::getDestreza()
+	{
+		return destreza;
+	}
+
+	float Personagem::getAgilidade()
+	{
+		return agilidade;
+	}
+
+	float Personagem::getCarisma()
+	{
+		return carisma;
+	}
+
+	float Personagem::getVida()
+	{
+		return vida;
+	}
+
+	float Personagem::getStamina()
+	{
+		return stamina;
+	}
+
+
+
+
 
  Personagem::Personagem(int id) {
 	this->id = id;
@@ -23,8 +95,8 @@ using namespace std;
 	char nav = 'z';
 	system("cls");
 	cout << " ___      __         __       __    __       __         __    __" << endl;
-	cout << "|_    |  |    |__|  |__|     |  \\  |  |     |    |__|  |__|  |__| " << endl;
-	cout << "|     |  |__  |  |  |  |     |__/  |__|     |__  |  |  |  |  | \\ " << endl << endl << endl;
+	cout << "|_    |  |    |__|  |__|     |  \  |  |     |    |__|  |__|  |__| " << endl;
+	cout << "|     |  |__  |  |  |  |     |__/  |__|     |__  |  |  |  |  | \ " << endl << endl << endl;
 	cout << "Criar Personagem Automaticamente" << endl << "Criar Personagem Manualmente" << endl;
 	do {
 		nav = _getch();

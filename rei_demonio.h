@@ -5,13 +5,15 @@
 #include <string>
 #include "personagem.h"
 
-class ReiDemonio:Personagem
+class ReiDemonio : public Personagem
 {
 
     public:
     ReiDemonio();
-    void Ataque(Personagem receb);
-    void fala();
+    
+    virtual ~ReiDemonio();
+    static void Ataque(Personagem receb, ReiDemonio reiDemonio);
+    static void fala();
 };
 
 #endif
