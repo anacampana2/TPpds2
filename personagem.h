@@ -10,6 +10,7 @@ class Personagem
 public:
 
     
+    Personagem();
     Personagem(int id);
     ~Personagem();
     void CriaAleatorio();
@@ -39,7 +40,7 @@ public:
     float getVida();
     float getStamina();
 
-    
+    float vida;
 
     private:
     int id;
@@ -48,7 +49,6 @@ public:
     float destreza;
     float agilidade;
     float carisma;
-    float vida;
     float stamina;
 
 };

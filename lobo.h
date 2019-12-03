@@ -5,16 +5,15 @@
 #include <string>
 #include "personagem.h"
 
-class Personagem:Lobo
+class Lobo : public Personagem
 {
 
     public:
     Lobo();
-    void Ataque(Personagem receb);
+    virtual ~Lobo();
+    void Ataque(Personagem receb, Lobo lobo1);
     void fala();
-//    void andar();
-//    void pular();
-//    void defender();
+    void recebAtaque(Personagem receb);
 };
 
 #endif

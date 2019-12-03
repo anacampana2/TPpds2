@@ -6,7 +6,7 @@
 #include <time.h>
 #include "roladados.h"
 
-int rolaDados(){
+static int rolaDados(){
 	int dad1,dad2,dad3;
 	dad1=1+ rand()%5;
 	dad2=1+ rand()%5;

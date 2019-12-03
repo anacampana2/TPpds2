@@ -14,6 +14,7 @@ class ReiDemonio : public Personagem
     virtual ~ReiDemonio();
     static void Ataque(Personagem receb, ReiDemonio reiDemonio);
     static void fala();
+    void recebAtaque(Personagem receb);
 };
 
 #endif

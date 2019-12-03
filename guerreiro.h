@@ -5,11 +5,12 @@
 #include <string>
 #include "personagem.h"
 
-class guerreiro:Personagem
+class Guerreiro: public Personagem
 {
     public:
     void CriaGuerreiro();
-    void ataque(int i, personagem per);
+    void CriaGuerreiro(int id);
+    void ataque(int i, Personagem per);
     void andar();
     void pular();
     void defender();

@@ -1,4 +1,4 @@
 #ifndef ROLADADOS_H
 #define ROLADADOS_H
-int rolaDados();
+static int rolaDados();
 #endif
