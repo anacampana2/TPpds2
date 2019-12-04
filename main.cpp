@@ -6,14 +6,13 @@
 #include <time.h>
 #include <math.h>
 
-#include "personagem.h"
-#include "lobo.h"
-#include "demonio.h"
-#include "rei_demonio.h"
+#include "personagem.cpp"
+#include "lobo.cpp"
+#include "demonio.cpp"
+#include "rei_demonio.cpp"
+#include "roladados.cpp"
 
 using namespace std;
-
-
 
 int main() {
 
@@ -33,7 +32,7 @@ int main() {
 //historia introdutoria aqui
 cout<<"Voce acorda com o grito de mulheres e criancas,pelo cheiro de enxofre presume que sua aldeia foi invadida por demonios "<<endl;
 cout<<"Sua primeira reacão é procurar sua filha, mas ela foi levada pelos demonios para completarem mais um ritual"<<endl;
-cout<<"Esse ritual acabaria com humanidade, pois ressucitaria Hitler "<<endl;
+cout<<"Esse ritual acabaria com humanidade, pois ressuscitaria Hitler "<<endl;
 cout<<"(Foi a pior pessoa que conseguirmos pensar :))"<<endl;
 
 
@@ -49,7 +48,7 @@ cin>> l;
 if(l==1){
 	cout<<"O lobo te perseguiu e te atacou pelas costas!!!"<<endl;
 	a.fala();
-	a.Ataque(j1);
+	a.Ataque(j1, a);
 
 	while(a.vida > 0 && j1.vida > 0){
 		cout<<" Você precisa revidar!"<<endl;
@@ -195,7 +194,7 @@ cout<<"Qual sua decisão?"<< endl;
 cout<<"1.Entrar no Castelo"<<endl;
 cout<<"2.Passar a noite fora e acender uma fogueira"<<endl;
 cout<<"3.Continuar a caminhada e procurar um lugar menos sombrio"<<endl;
-demonio dem;
+Demonio dem;
 j1.vida = j1.vida + 10;
 int decisao2 = 0;
 cin >> decisao2;

@@ -16,9 +16,8 @@ public:
     void CriaAleatorio();
     void CriaManual();
     void Ficha();
-    void Ataque(Personagem p1, int i);
+    void Ataque(Personagem p1, int i, int dados);
     void fala();
-    void rolaDados();
     
    
     

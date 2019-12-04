@@ -467,19 +467,19 @@ void Personagem::Ficha() {
 //	cout << "Stamina:       " << this->stamina << endl;
 }
 
-void Personagem::Ataque(Personagem receb, int i){
+void Personagem::Ataque(Personagem receb, int i, int dados){
 
   if(i == 1){
-int ataque = this->forca + rolaDados() + this-> carisma;
-int defesa = receb.destreza + receb.agilidade + rolaDados();
+int ataque = this->forca + dados + this-> carisma;
+int defesa = receb.destreza + receb.agilidade + dados;
 this->stamina = this->stamina - 2;
  receb.vida = receb.vida - (ataque-defesa);
 cout<< "voce causou" << ataque-defesa<< " de dano" << endl;
 cout<< "a vida do adversario é igual a"<< receb.vida<< endl;
   }
   else{
-    int ataque = this->forca + rolaDados() + this-> carisma + 8;
-    int defesa = receb.destreza + receb.agilidade + rolaDados();
+    int ataque = this->forca + dados + this-> carisma + 8;
+    int defesa = receb.destreza + receb.agilidade + dados;
     this->stamina = this->stamina - 5;
     receb.vida = receb.vida - (ataque-defesa);
     cout<< "voce causou" << ataque-defesa<< " de dano" << endl;

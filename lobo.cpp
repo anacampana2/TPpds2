@@ -31,15 +31,16 @@ using namespace std;
 
 }
 
-void Lobo::Ataque(Personagem receb, Lobo lobo){
-  int ataque = lobo.getForca() + rolaDados() + lobo.getCarisma();
-  int defesa = receb.getDestreza() + receb.getAgilidade() + rolaDados();
-   receb.vida = receb.vida - (ataque-defesa);
-  cout<< "voce recebeu" << ataque-defesa<< " de dano" << endl;
-  cout<< "sua vida é igual a "<< receb.vida<< endl;
+void Lobo::Ataque(Personagem p1, Lobo lobo1){
+  int ataqueLobo = lobo1.getForca() + rolaDados() + lobo1.getCarisma();
+  int defesaPersonagem = p1.getDestreza() + p1.getAgilidade() + rolaDados();
+  float vidaPerso = p1.getVida() - (ataqueLobo-defesaPersonagem);
+  setVida(vidaPerso);
+  cout<< "voce recebeu" << ataqueLobo-defesaPersonagem<< " de dano" << endl;
+  cout<< "sua vida é igual a "<< vidaPerso << endl;
 }
 
 void Lobo::fala(){
   cout<< "Lobo: Grrrrrrrrrrrr AU!AU!AU!" << endl;
 }
-}
+

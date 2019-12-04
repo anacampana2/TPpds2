@@ -11,9 +11,8 @@ class Lobo : public Personagem
     public:
     Lobo();
     virtual ~Lobo();
-    void Ataque(Personagem receb, Lobo lobo1);
+    void Ataque(Personagem p1, Lobo lobo1);
     void fala();
-    void recebAtaque(Personagem receb);
 };
 
 #endif

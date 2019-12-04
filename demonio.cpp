@@ -31,12 +31,13 @@ using namespace std;
 
 }
 
-void Demonio::Ataque(Personagem receb, Demonio demonio){
-  int ataque = demonio.getForca() + rolaDados() + demonio.getCarisma();
-  int defesa = receb.getDestreza() + receb.getAgilidade() + rolaDados();
-   receb.vida = receb.vida - (ataque-defesa);
-  cout<< "voce recebeu" << ataque-defesa<< " de dano" << endl;
-  cout<< "sua vida é igual a "<< receb.vida<< endl;
+void Demonio::Ataque(Personagem p1, Demonio demonio){
+  int ataqueDemonio = demonio.getForca() + rolaDados() + demonio.getCarisma();
+  int defesaPerso = p1.getDestreza() + p1.getAgilidade() + rolaDados();
+  float vidaPerso = p1.getVida() - (ataqueDemonio-defesaPerso);
+  p1.setVida(vidaPerso);
+  cout<< "voce recebeu" << ataqueDemonio-defesaPerso<< " de dano" << endl;
+  cout<< "sua vida é igual a "<< vidaPerso<< endl;
 }
 
 void Demonio::fala(){

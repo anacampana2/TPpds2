@@ -12,8 +12,7 @@ class Demonio : public Personagem
     Demonio();
     virtual ~Demonio();
     void fala();
-    void Ataque(Personagem receb, Demonio demonio);
-    void recebAtaque(Personagem receb);
+    void Ataque(Personagem p1, Demonio demonio);
 };
 
 #endif

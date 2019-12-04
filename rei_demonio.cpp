@@ -34,12 +34,14 @@ using namespace std;
   
 }
 
- void ReiDemonio::Ataque(Personagem receb, ReiDemonio reiDemonio){
-  int ataque = reiDemonio.getForca() + rolaDados() + reiDemonio.getCarisma();
-  int defesa = receb.getDestreza() + receb.getAgilidade() + rolaDados();
-   receb.vida = receb.getVida() - (ataque-defesa);
-  cout<< "voce recebeu" << ataque-defesa<< " de dano" << endl;
-  cout<< "sua vida é igual a "<< receb.getVida()<< endl;
+ void ReiDemonio::Ataque(ReiDemonio reiDemonio, Personagem p1)
+ {
+  int attRDemo = reiDemonio.getForca() + rolaDados() + reiDemonio.getCarisma();
+  int defesaPerso = p1.getDestreza() + p1.getAgilidade() + rolaDados();
+  float vidaPerso = p1.getVida() - (attRDemo-defesaPerso);
+  p1.setVida(vidaPerso);
+  cout<< "voce recebeu" << attRDemo-defesaPerso<< " de dano" << endl;
+  cout<< "sua vida é igual a "<< p1.getVida()<< endl;
 }
 
 void ReiDemonio::fala(){
