@@ -22,3 +22,12 @@ Personas utilizadas: Jogador de RPG experiente, iniciante e intermediário.
 ->Eu, enquanto jogador de RPG's, gostaria de um jogo que simulasse combates entre personagens levando em consideração seus atributos, para tornar o jogo mais complexo e interessante;
 
 ->Eu, enquanto jogador de RPG's, gostaria de um jogo que possibilitasse gerar atributos dos personagens de forma aleatória, para aumentar sua similaridade com clássicos de RPG;
+
+
+->Compilacao
+
+basta rodar o makefile com o comando make
+
+->Executar
+
+abrir o cmd e executar o .exe gerado pelo makefile
