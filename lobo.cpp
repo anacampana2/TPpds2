@@ -1,8 +1,15 @@
 #include <iostream>
+#include <iomanip>
+#include <stdio.h>
+#include <conio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <math.h>
 #include <string>
+
 #include "personagem.h"
 #include "lobo.h"
+#include "roladados.h"
 
 using namespace std;
 

@@ -1,9 +1,9 @@
 #ifndef PERSONAGEM_H
 #define PERSONAGEM_H
 
-#include <stdlib.h>
-#include <string>
-
+class Lobo;
+class Demonio;
+class ReiDemonio;
 
 class Personagem
 {
@@ -16,7 +16,9 @@ public:
     void CriaAleatorio();
     void CriaManual();
     void Ficha();
-    void Ataque(Personagem p1, int i, int dados);
+    void AtacaLobo(Personagem p1, int i, Lobo lobo1);
+    void AtacaDemonio(Personagem p1, int i, Demonio d1);
+    void AtacaReiDemonio(Personagem p1, int i, ReiDemonio RD1); 
     void fala();
     
    

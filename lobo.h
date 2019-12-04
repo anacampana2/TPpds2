@@ -1,9 +1,7 @@
 #ifndef LOBO_H
 #define LOBO_H
 
-#include <stdlib.h>
-#include <string>
-#include "personagem.h"
+class Personagem;
 
 class Lobo : public Personagem
 {

@@ -5,6 +5,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include <string>
+
+#include "personagem.h"
+#include "lobo.h"
+#include "demonio.h"
+#include "rei_demonio.h"
+#include "roladados.h"
 
 #include "personagem.cpp"
 #include "lobo.cpp"
@@ -15,7 +22,7 @@
 using namespace std;
 
 int main() {
-
+	Personagem jogador1;
 	char id='z';
 	do {
 		cout << endl << endl << endl << " Digite seu id:";
@@ -25,7 +32,7 @@ int main() {
 			break;
 		case '1':
 			cout << endl << endl << endl << " SEU ID EH:" << id << endl;
-			Personagem j1 = Personagem(id);
+		    jogador1 = Personagem(id);
 			break;
 		}
 	} while (id != '0');
@@ -35,49 +42,49 @@ cout<<"Sua primeira reacão é procurar sua filha, mas ela foi levada pelos demo
 cout<<"Esse ritual acabaria com humanidade, pois ressuscitaria Hitler "<<endl;
 cout<<"(Foi a pior pessoa que conseguirmos pensar :))"<<endl;
 
-
+Personagem jogador1inteiro = jogador1;
 //Primeira ação
-Lobo a;
+Lobo lobo1;
 
 cout<<"Voce avistou um lobo,o que voce vai fazer?"<<endl;
-cout<<"1. Fugir,afinal, lobo é feios"<<endl;
+cout<<"1. Fugir,afinal, lobo é feioso"<<endl;
 cout<<"2. Atacar"<<endl;
 cout<<"3.Observar de forma furtiva"<<endl;
-int l =0;
-cin>> l;
-if(l==1){
+int opcao = 0;
+cin>> opcao;
+if(opcao==1){
 	cout<<"O lobo te perseguiu e te atacou pelas costas!!!"<<endl;
-	a.fala();
-	a.Ataque(j1, a);
+	lobo1.fala();
+	lobo1.Ataque(jogador1, lobo1);
 
-	while(a.vida > 0 && j1.vida > 0){
+	while(lobo1.getVida() > 0 && jogador1.getVida() > 0){
 		cout<<" Você precisa revidar!"<<endl;
 		cout<<"1. Ataque leve"<< endl;
 		cout<<"2. Ataque pesado"<<endl;
 		int ataq;
 		cin>> ataq;
 		if(ataq == 1){
-			if(j1.stamina < 2){
+			if(jogador1.getStamina() < 2){
 				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
-					j1.Ataque(a, ataq);
+					jogador1.AtacaLobo(jogador1, ataq, lobo1);
 			}
 		}
 		else{
-			if(j1.stamina <6){
+			if(jogador1.getStamina() <6){
 				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
-					j1.Ataque(a, ataq);
+					jogador1.AtacaLobo(jogador1, ataq, lobo1);
 			}
 		}
 
 		cout <<  "o lobo revidou"<<endl;
-		a.fala();
-		a.Ataque(j1);
+		lobo1.fala();
+		lobo1.Ataque(jogador1, lobo1);
 	}
-	if(a.vida<= 0){
+	if(lobo1.getVida()<= 0){
 		cout<<"O lobo foi derrotado, continue sua jornada!"<<endl;
 	}
 	else{
@@ -85,58 +92,60 @@ if(l==1){
 			cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 	}
 }
-if(l==2){
+if(opcao==2){
 cout<<"Voce atacou o lobo, defina seu tipo de Ataque"<<endl;
 cout<<"1. Ataque leve"<< endl;
 cout<<"2. Ataque pesado"<<endl;
 int ataq;
 cin>> ataq;
 if(ataq == 1){
-	if(j1.stamina < 2){
+	if(jogador1.getStamina() < 2){
 		cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 	}
 	else{
-			j1.Ataque(a, ataq);
+			jogador1.AtacaLobo(jogador1, ataq, lobo1);
 	}
 }
 else{
-	if(j1.stamina <6){
+	if(jogador1.getStamina()<6){
 		cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 	}
 	else{
-			j1.Ataque(a, ataq);
+			jogador1.AtacaLobo(jogador1, ataq, lobo1);
 	}
 }
 cout<< "O lobo revidou"<< endl;
-a.fala();
-a.Ataque(j1);
-while(a.vida > 0 && j1.vida > 0){
+lobo1.fala();
+lobo1.Ataque(jogador1, lobo1);
+
+
+while(lobo1.getVida() > 0 && jogador1.getVida() > 0){
 	cout<<" Você precisa revidar!"<<endl;
 	cout<<"1. Ataque leve"<< endl;
 	cout<<"2. Ataque pesado"<<endl;
 	int ataq;
 	cin>> ataq;
 	if(ataq == 1){
-		if(j1.stamina < 2){
+		if(jogador1.getStamina() < 2){
 			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
-				j1.Ataque(a, ataq);
+				jogador1.AtacaLobo(jogador1, ataq, lobo1);
 		}
 	}
 	else{
-		if(j1.stamina <6){
+		if(jogador1.getStamina() <6){
 			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
-				j1.Ataque(a, ataq);
+				jogador1.AtacaLobo(jogador1, ataq, lobo1);
 		}
 	}
 	cout <<  "o lobo revidou"<<endl;
-	a.fala();
-	a.Ataque(j1);
+	lobo1.fala();
+	lobo1.Ataque(jogador1, lobo1);
 }
-if(a.vida<= 0){
+if(lobo1.getVida()<= 0){
 	cout<<"O lobo foi derrotado, continue sua jornada!"<<endl;
 }
 else{
@@ -144,42 +153,42 @@ else{
 		cout<<"O rei demonio invocou Hitler, e junto com Bonoliro eles dominaram o mundo e proibiram o uso de entorpecentes :()"<<endl;
 }
 }
-if(l==3){
+if(opcao==3){
 	cout<<"O lobo sentiu sua presença e te atacou!!"<<endl;
-	a.fala();
-	a.Ataque(j1);
-int k;
-	while(a.vida > 0 && j1.vida > 0){
+	lobo1.fala();
+	lobo1.Ataque(jogador1, lobo1);
+	int k = 0;
+	while(lobo1.getVida() > 0 && jogador1.getVida() > 0){
 		cout<<" Você precisa revidar!"<<endl;
 		cout<<"1. Ataque leve"<< endl;
 		cout<<"2. Ataque pesado"<<endl;
 		int ataq;
 		cin>> ataq;
 		if(ataq == 1){
-			if(j1.stamina < 2){
+			if(jogador1.getStamina() < 2){
 				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
-					j1.Ataque(a, ataq);
+					jogador1.AtacaLobo(jogador1, ataq, lobo1);
 			}
 		}
 		else{
-			if(j1.stamina <6){
+			if(jogador1.getStamina() <6){
 				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
-					j1.Ataque(a, ataq);
+					jogador1.AtacaLobo(jogador1, ataq, lobo1);
 			}
 		}
 		cout <<  "o lobo revidou"<<endl;
-		a.fala();
-		a.Ataque(j1);
+		lobo1.fala();
+		lobo1.Ataque(jogador1, lobo1);
 		k++;
 		if(k%2 == 0){
-			j1.stamina = j1.stamina +1;
+			jogador1.setStamina(jogador1.getStamina()+1);
 		}
 	}
-	if(a.vida<= 0){
+	if(lobo1.getVida()<= 0){
 		cout<<"O lobo foi derrotado, continue sua jornada!"<<endl;
 	}
 	else{
@@ -195,7 +204,10 @@ cout<<"1.Entrar no Castelo"<<endl;
 cout<<"2.Passar a noite fora e acender uma fogueira"<<endl;
 cout<<"3.Continuar a caminhada e procurar um lugar menos sombrio"<<endl;
 Demonio dem;
-j1.vida = j1.vida + 10;
+
+jogador1.setVida(jogador1inteiro.getVida());
+jogador1.setStamina(jogador1inteiro.getStamina());
+
 int decisao2 = 0;
 cin >> decisao2;
 if(decisao2==1){
@@ -206,49 +218,49 @@ cout<<"2. Ataque pesado"<<endl;
 int ataq;
 cin>> ataq;
 if(ataq == 1){
-	if(j1.stamina < 2){
+	if(jogador1.getStamina() < 2){
 		cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 	}
 	else{
-			j1.Ataque(dem, ataq);
+			jogador1.AtacaDemonio(jogador1, ataq, dem);
 	}
 }
 else{
-	if(j1.stamina <6){
+	if(jogador1.getStamina() <6){
 		cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 	}
 	else{
-			j1.Ataque(dem, ataq);
+			jogador1.AtacaDemonio(jogador1, ataq, dem);
 	}
 }
 cout<< "O demonio revidou"<< endl;
 dem.fala();
-dem.Ataque(j1);
-while(dem.vida > 0 && j1.vida > 0){
+dem.Ataque(jogador1, dem);
+while(dem.getVida() > 0 && jogador1.getVida() > 0){
 	cout<<" Você precisa revidar!"<<endl;
 	cout<<"1. Ataque leve"<< endl;
 	cout<<"2. Ataque pesado"<<endl;
 	int ataq;
 	cin>> ataq;
 	if(ataq == 1){
-		if(j1.stamina < 2){
+		if(jogador1.getStamina() < 2){
 			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
-				j1.Ataque(dem, ataq);
+				jogador1.AtacaDemonio(jogador1, ataq, dem);
 		}
 	}
 	else{
-		if(j1.stamina <6){
+		if(jogador1.getStamina() <6){
 			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
-				j1.Ataque(dem, ataq);
+				jogador1.AtacaDemonio(jogador1, ataq, dem);
 		}
 	}
 	cout <<  "o demonio revidou"<<endl;
 	dem.fala();
-	dem.Ataque(j1);
+	dem.Ataque(jogador1, dem);
 }
 if(dem.vida<= 0){
 	cout<<"O demonio foi derrotado, continue sua jornada!"<<endl;
@@ -261,7 +273,8 @@ else{
 
 
 if(decisao2==2){
-	if(j1.destreza>= 10){
+	if(jogador1.getDestreza() >= 10){
+		int k = 0;
 		cout<<"Por possuir um elevado nivel de destreza, voce conseguiu fazer fogueira e se esquentar"<<endl;
 		cout<<"No meio da noite você escuta barulhos estranhos e ao investigar encontra uma entidade obscura e por isso precisa atacar"<<endl;
 		cout<<"Defina seu tipo de Ataque"<<endl;
@@ -270,55 +283,55 @@ if(decisao2==2){
 		int ataq;
 		cin>> ataq;
 		if(ataq == 1){
-			if(j1.stamina < 2){
+			if(jogador1.getStamina() < 2){
 				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
-					j1.Ataque(dem, ataq);
+					jogador1.AtacaDemonio(jogador1, ataq, dem);
 			}
 		}
 		else{
-			if(j1.stamina <6){
+			if(jogador1.getStamina() <6){
 				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
-					j1.Ataque(dem, ataq);
+					jogador1.AtacaDemonio(jogador1, ataq, dem);
 			}
 		}
 		cout<< "O demonio revidou"<< endl;
 		dem.fala();
-		dem.Ataque(j1);
-		while(dem.vida > 0 && j1.vida > 0){
+		dem.Ataque(jogador1, dem);
+		while(dem.getVida() > 0 && jogador1.getVida() > 0){
 			cout<<" Você precisa revidar!"<<endl;
 			cout<<"1. Ataque leve"<< endl;
 			cout<<"2. Ataque pesado"<<endl;
 			int ataq;
 			cin>> ataq;
 			if(ataq == 1){
-				if(j1.stamina < 2){
+				if(jogador1.getStamina() < 2){
 					cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 				}
 				else{
-						j1.Ataque(dem, ataq);
+						jogador1.AtacaDemonio(jogador1, ataq, dem);
 				}
 			}
 			else{
-				if(j1.stamina <6){
+				if(jogador1.getStamina() <6){
 					cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 				}
 				else{
-						j1.Ataque(dem, ataq);
+						jogador1.AtacaDemonio(jogador1, ataq, dem);
 				}
 			}
 			cout <<  "o demonio revidou"<<endl;
 			dem.fala();
-			dem.Ataque(j1);
+			dem.Ataque(jogador1, dem);
 			k++;
 			if(k%2 == 0){
-				j1.stamina = j1.stamina +1;
+				jogador1.setStamina(jogador1.getStamina() + 1);
 			}
 		}
-		if(dem.vida<= 0){
+		if(dem.getVida()<= 0){
 			cout<<"O demonio foi derrotado, continue sua jornada!"<<endl;
 		}
 		else{
@@ -329,36 +342,36 @@ if(decisao2==2){
 	else{
 		cout<<"Voce nao possuiu destreza o suficiente para construir a fogueira e por isso, na escuridão, o sete peles te pegou!"<<endl;
 		dem.fala();
-		dem.Ataque(j1);
+		dem.Ataque(jogador1, dem);
 
-		while(dem.vida > 0 && j1.vida > 0){
+		while(dem.getVida() > 0 && jogador1.getVida() > 0){
 			cout<<" Você precisa revidar!"<<endl;
 			cout<<"1. Ataque leve"<< endl;
 			cout<<"2. Ataque pesado"<<endl;
 			int ataq;
 			cin>> ataq;
 			if(ataq == 1){
-				if(j1.stamina < 2){
+				if(jogador1.getStamina() < 2){
 					cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 				}
 				else{
-						j1.Ataque(dem, ataq);
+						jogador1.AtacaDemonio(jogador1, ataq, dem);
 				}
 			}
 			else{
-				if(j1.stamina <6){
+				if(jogador1.getStamina() <6){
 					cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 				}
 				else{
-						j1.Ataque(dem, ataq);
+						jogador1.AtacaDemonio(jogador1, ataq, dem);
 				}
 			}
 
 			cout <<  "o demonio revidou"<<endl;
 			dem.fala();
-			dem.Ataque(j1);
+			dem.Ataque(jogador1, dem);
 		}
-		if(dem.vida<= 0){
+		if(dem.getVida()<= 0){
 			cout<<"O demonio foi derrotado, continue sua jornada!"<<endl;
 		}
 		else{
@@ -381,7 +394,8 @@ cout<<"Lá, voce encontra o mapa que leva ate a localidade em que os cramunhoes 
 
 ReiDemonio Rdem;
 
-j1.vida = j1.vida + 10;
+jogador1.setVida(jogador1inteiro.getVida());
+jogador1.setStamina(jogador1inteiro.getStamina());
 
 cout<<"Ao chegar ao seu destino, o terreno tortuoso e sombrio, já denunciava o que lhe esperava"<<endl;
 cout<<"O rei demonio, em meio a poeira e àos corvos, surgiu e voce tem que enfrenta-lo"<<endl;
@@ -394,40 +408,41 @@ int decisao3=0;
 cin>>decisao3;
 
 if(decisao3==1){
+	int k=0;
 	cout<<"O Rei demonio teve um pessimo dia, e se irritou com sua pergunta.."<<endl;
 	cout<<"Por isso, ele te atacou e não te deu tempo de reaçao..."<<endl;
 	Rdem.fala();
-	Rdem.Ataque(j1);
+	Rdem.Ataque(jogador1, Rdem);
 
-	while(Rdem.vida > 0 && j1.vida > 0){
+	while(Rdem.getVida() > 0 && jogador1.getVida() > 0){
 		cout<<" Você precisa revidar!"<<endl;
 		cout<<"1. Ataque leve"<< endl;
 		cout<<"2. Ataque pesado"<<endl;
 		int ataq;
 		cin>> ataq;
 		if(ataq == 1){
-			if(j1.stamina < 2){
+			if(jogador1.getStamina() < 2){
 				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
-					j1.Ataque(Rdem, ataq);
+					jogador1.AtacaReiDemonio(jogador1, ataq, Rdem);
 			}
 		}
 		else{
-			if(j1.stamina <6){
+			if(jogador1.getStamina() <6){
 				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
-					j1.Ataque(Rdem, ataq);
+					jogador1.AtacaReiDemonio(jogador1, ataq, Rdem);
 			}
 		}
 
 		cout <<  "O Rei demonio revidou"<<endl;
 		Rdem.fala();
-		Rdem.Ataque(j1);
+		Rdem.Ataque(jogador1, Rdem);
 		k++;
 		if(k%2 == 0){
-			j1.stamina = j1.stamina +1;
+			jogador1.setStamina(jogador1.getStamina() +1);
 		}
 	}
 	if(Rdem.vida<= 0){
@@ -451,49 +466,49 @@ if(decisao3==2){
 	int ataq;
 	cin>> ataq;
 	if(ataq == 1){
-		if(j1.stamina < 2){
+		if(jogador1.getStamina() < 2){
 			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
-				j1.Ataque(Rdem, ataq);
+				jogador1.AtacaReiDemonio(jogador1, ataq, Rdem);
 		}
 	}
 	else{
-		if(j1.stamina <6){
+		if(jogador1.getStamina() <6){
 			cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 		}
 		else{
-				j1.Ataque(Rdem, ataq);
+				jogador1.AtacaReiDemonio(jogador1, ataq, Rdem);
 		}
 	}
 	cout<< "O Rei demonio revidou"<< endl;
 	Rdem.fala();
-	Rdem.Ataque(j1);
-	while(Rdem.vida > 0 && j1.vida > 0){
+	Rdem.Ataque(jogador1, Rdem);
+	while(Rdem.getVida() > 0 && jogador1.getVida() > 0){
 		cout<<" Você precisa revidar!"<<endl;
 		cout<<"1. Ataque leve"<< endl;
 		cout<<"2. Ataque pesado"<<endl;
 		int ataq;
 		cin>> ataq;
 		if(ataq == 1){
-			if(j1.stamina < 2){
+			if(jogador1.getStamina() < 2){
 				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
-					j1.Ataque(Rdem, ataq);
+					jogador1.AtacaReiDemonio(jogador1, ataq, Rdem);
 			}
 		}
 		else{
-			if(j1.stamina <6){
+			if(jogador1.getStamina() <6){
 				cout << "voce nao tem stamina suficiente para atacar, voce perdeu a rodada"<< endl;
 			}
 			else{
-					j1.Ataque(Rdem, ataq);
+					jogador1.AtacaReiDemonio(jogador1, ataq, Rdem);
 			}
 		}
 		cout <<  "o Rei demonio revidou"<<endl;
 		Rdem.fala();
-		Rdem.Ataque(j1);
+		Rdem.Ataque(jogador1, Rdem);
 	}
 	if(Rdem.vida<= 0){
 				cout<<"O Rei demonio foi derrotado!!!!Parabéns!! Voce salvou sua filha e o mundo :)"<<endl;
@@ -513,14 +528,5 @@ if(decisao3==3){
 
 
 }
-
-
-
-
-
-
-
-
-
 	return 0;
 }

@@ -1,9 +1,7 @@
 #ifndef REI_DEMONIO_H
 #define REI_DEMONIO_H
 
-#include <stdlib.h>
-#include <string>
-#include "personagem.h"
+class Personagem;
 
 class ReiDemonio : public Personagem
 {
@@ -12,7 +10,7 @@ class ReiDemonio : public Personagem
     ReiDemonio();
     
     virtual ~ReiDemonio();
-    static void Ataque(ReiDemonio reiDemonio, Personagem p1);
+    static void Ataque(Personagem p1, ReiDemonio reiDemonio);
     static void fala();
 };
 

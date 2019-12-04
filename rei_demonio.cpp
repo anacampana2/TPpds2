@@ -1,10 +1,15 @@
 #include <iostream>
+#include <iomanip>
+#include <stdio.h>
+#include <conio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <math.h>
 #include <string>
-#include "rei_demonio.h"
-#include "personagem.h"
-#include "roladados.cpp"
 
+#include "personagem.h"
+#include "rei_demonio.h"
+#include "roladados.h"
 
 using namespace std;
 
@@ -34,7 +39,7 @@ using namespace std;
   
 }
 
- void ReiDemonio::Ataque(ReiDemonio reiDemonio, Personagem p1)
+ void ReiDemonio::Ataque(Personagem p1, ReiDemonio reiDemonio)
  {
   int attRDemo = reiDemonio.getForca() + rolaDados() + reiDemonio.getCarisma();
   int defesaPerso = p1.getDestreza() + p1.getAgilidade() + rolaDados();
