@@ -4,9 +4,85 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "personagem.h"
+#include <math.h>
+#include <string>
+
+#include "roladados.h"
+
 
 using namespace std;
+
+	void Personagem::setId(int id)
+	{
+		this->id = id;
+	}
+	void Personagem::setForca(float forca)
+	{
+		this->forca = forca;
+	}
+	void Personagem::setConstituicao(float constituicao)
+	{
+		this->constituicao = constituicao;
+	}
+	void Personagem::setDestreza(float destreza)
+	{
+		this->destreza = destreza;
+	}
+	void Personagem::setAgilidade(float agilidade)
+	{
+		this->agilidade = agilidade;
+	}
+	void Personagem::setCarisma(float carisma)
+	{
+		this->carisma = carisma;
+	}
+	void Personagem::setStamina(float stamina)
+	{
+		this->stamina = stamina;
+	}
+	
+	int Personagem::getId()
+	{
+		return id;
+	}
+	
+	float Personagem::getForca()
+	{
+		return forca;
+	}
+
+	float Personagem::getConstituicao()
+	{
+		return constituicao;
+	}
+
+	float Personagem::getDestreza()
+	{
+		return destreza;
+	}
+
+	float Personagem::getAgilidade()
+	{
+		return agilidade;
+	}
+
+	float Personagem::getCarisma()
+	{
+		return carisma;
+	}
+
+	float Personagem::getVida()
+	{
+		return vida;
+	}
+
+	float Personagem::getStamina()
+	{
+		return stamina;
+	}
+
+
+
 
 
  Personagem::Personagem(int id) {
@@ -22,8 +98,8 @@ using namespace std;
 	char nav = 'z';
 	system("cls");
 	cout << " ___      __         __       __    __       __         __    __" << endl;
-	cout << "|_    |  |    |__|  |__|     |  \\  |  |     |    |__|  |__|  |__| " << endl;
-	cout << "|     |  |__  |  |  |  |     |__/  |__|     |__  |  |  |  |  | \\ " << endl << endl << endl;
+	cout << "|_    |  |    |__|  |__|     |  \  |  |     |    |__|  |__|  |__| " << endl;
+	cout << "|     |  |__  |  |  |  |     |__/  |__|     |__  |  |  |  |  | \ " << endl << endl << endl;
 	cout << "Criar Personagem Automaticamente" << endl << "Criar Personagem Manualmente" << endl;
 	do {
 		nav = _getch();
@@ -95,12 +171,12 @@ void Personagem::CriaManual() {
 	cout << "Vida:          " << endl;
 	cout << "Stamina:       " << endl;
 
-	char i = 254;	
+	char i = 254;
 	char nav = 'z';
 	int navaux = 0;
 	int pontos = 0;
 	do {
-		
+
 		if (navaux == 0) {
 			system("cls");
 			cout << " ___      __         __       __    __       __         __    __" << endl;
@@ -391,5 +467,74 @@ void Personagem::Ficha() {
 	cout << "Agilidade:     " << this->agilidade << endl;
 	cout << "Carisma:       " << this->carisma << endl;
 	cout << "Vida:          " << this->vida << endl;
-	cout << "Stamina:       " << this->stamina << endl;
+//	cout << "Stamina:       " << this->stamina << endl;
+}
+
+void AtacaLobo(Personagem p1, int i, Lobo lobo1){
+
+  if(i == 1){
+int attPerso = p1.getForca() + rolaDados() + p1.getCarisma();
+int defesaLobo = lobo1.getDestreza() + lobo1.getAgilidade() + rolaDados();
+p1.setStamina(p1.getStamina() - 2);
+float vidaLobo = lobo1.getVida() - (attPerso-defesaLobo);
+lobo1.setVida(vidaLobo);
+cout<< "voce causou" << attPerso-defesaLobo<< " de dano" << endl;
+cout<< "a vida do adversario é igual a"<< lobo1.getVida()<< endl;
+  }
+  else{
+    int attPerso = p1.getForca() + rolaDados() + p1.getCarisma() + 8;
+    int defesaLobo = lobo1.getDestreza() + lobo1.getAgilidade() + rolaDados();
+    p1.setStamina(p1.getStamina() - 5);
+	float vidaLobo = lobo1.getVida() - (attPerso-defesaLobo);
+	lobo1.setVida(vidaLobo);
+    cout<< "voce causou" << attPerso-defesaLobo<< " de dano" << endl;
+    cout<< "a vida do adversario é igual a"<< lobo1.getVida()<< endl;
+  }
+  
+}
+
+void AtacaDemonio(Personagem p1, int i, Demonio d1){
+
+  if(i == 1){
+	int attPerso = p1.getForca() + rolaDados() + p1.getCarisma();
+	int defesaDemonio = d1.getDestreza() + d1.getAgilidade() + rolaDados();
+	p1.setStamina(p1.getStamina() - 2);
+	float vidaDemonio = d1.getVida() - (attPerso-defesaDemonio);
+	d1.setVida(vidaDemonio);
+cout<< "voce causou" << attPerso-defesaDemonio<< " de dano" << endl;
+cout<< "a vida do adversario é igual a"<< d1.getVida()<< endl;
+  }
+  else{
+    int attPerso =  p1.getForca() + rolaDados() + p1.getCarisma() + 8;
+    int defesaDemonio = d1.getDestreza() + d1.getAgilidade() + rolaDados();
+    p1.setStamina(p1.getStamina() - 5);
+    float vidaDemonio = d1.getVida() - (attPerso-defesaDemonio);
+	d1.setVida(vidaDemonio);
+    cout<< "voce causou" << attPerso-defesaDemonio<< " de dano" << endl;
+    cout<< "a vida do adversario é igual a"<<d1.getVida()<< endl;
+  }
+  
+}
+
+void AtacaReiDemonio(Personagem p1, int i, ReiDemonio rd1){
+
+  if(i == 1){
+	int attPerso =  p1.getForca() + rolaDados() + p1.getCarisma();
+	int defesaRD = rd1.getDestreza() + rd1.getAgilidade() + rolaDados();
+	p1.setStamina(p1.getStamina() - 2);
+	float vidaRD = rd1.getVida() - (attPerso-defesaRD);
+	rd1.setVida(vidaRD);
+cout<< "voce causou" << attPerso-defesaRD<< " de dano" << endl;
+cout<< "a vida do adversario é igual a"<< rd1.getVida()<< endl;
+  }
+  else{
+    int attPerso =  p1.getForca() + rolaDados() + p1.getCarisma() + 8;
+    int defesaRD = rd1.getDestreza() + rd1.getAgilidade() + rolaDados();
+    p1.setStamina(p1.getStamina() - 5);
+    float vidaRD = rd1.getVida() - (attPerso-defesaRD);
+	rd1.setVida(vidaRD);
+    cout<< "voce causou" << attPerso-defesaRD<< " de dano" << endl;
+    cout<< "a vida do adversario é igual a"<< rd1.getVida()<< endl;
+  }
+  
 }
